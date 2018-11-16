@@ -43,6 +43,9 @@ rm $bp_dir/bin/util/stdlib.sh
 # failure counting
 source $bp_dir/bin/util/failures.sh
 
+#install xdebug
+source $bp_dir/bin/xdebug
+
 # for extensions that need special treatment
 source $bp_dir/bin/util/newrelic.sh
 source $bp_dir/bin/util/blackfire.sh
