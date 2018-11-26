@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-apt-get install php7.0-dev --yes
 wget http://xdebug.org/files/xdebug-2.6.1.tgz
 tar -xvzf xdebug-2.6.1.tgz
 cd xdebug-2.6.1

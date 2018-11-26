@@ -46,7 +46,6 @@ source $bp_dir/bin/util/failures.sh
 # for extensions that need special treatment
 source $bp_dir/bin/util/newrelic.sh
 source $bp_dir/bin/util/blackfire.sh
-source $bp_dir/bin/util/xdebug.sh
 
 # if this is set it prevents Git clones (e.g. for Composer installs from source) during the build in some circumstances, and it is set in SSH Git deploys to Heroku
 unset GIT_DIR
@@ -745,6 +744,7 @@ if [[ "${HEROKU_PHP_INSTALL_DEV+CI}" != "CI" ]]; then
 	install_newrelic_ext
 	install_newrelic_userini
 fi
+source $bp_dir/bin/util/xdebug.sh
 
 # done with platform installs; restore COMPOSER from previous value
 export COMPOSER="$COMPOSER_bak"
