@@ -735,7 +735,6 @@ fi
 # reset COMPOSER for the platform install step
 COMPOSER_bak="$COMPOSER"
 export COMPOSER=composer.json
-echo ${HEROKU_PHP_INSTALL_DEV+CI}
 # unless we're running a CI build...
 if [[ "${HEROKU_PHP_INSTALL_DEV+CI}" != "CI" ]]; then
 	status "Checking for additional extensions to install..."
@@ -745,8 +744,8 @@ if [[ "${HEROKU_PHP_INSTALL_DEV+CI}" != "CI" ]]; then
 	# special treatment for New Relic; we enable it if we detect a license key for it
 	install_newrelic_ext
 	install_newrelic_userini
-	install_xdebug_ext
 fi
+install_xdebug_ext
 #source $bp_dir/bin/util/xdebug.sh
 
 # done with platform installs; restore COMPOSER from previous value
