@@ -739,6 +739,7 @@ export COMPOSER=composer.json
 # unless we're running a CI build...
 if [[ "${HEROKU_PHP_INSTALL_DEV+CI}" != "CI" ]]; then
 	status "Checking for additional extensions to install..."
+	echo "Checking for additional extensions to install..."
 	# special treatment for Blackfire; we enable it if we detect a server id and a server token for it
 	install_blackfire_ext
 	# special treatment for New Relic; we enable it if we detect a license key for it
