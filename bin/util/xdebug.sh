@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 OUT_PREFIX=$1
-wget http://xdebug.org/files/xdebug-2.6.1.tgz
-tar -xvzf xdebug-2.6.1.tgz
+echo "-----> Building xdebug..."
+curl -L  http://xdebug.org/files/xdebug-2.6.1.tgz | tar -xvzf -
 cd xdebug-2.6.1
 phpize
 ./configure
