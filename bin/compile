@@ -746,7 +746,7 @@ if [[ "${HEROKU_PHP_INSTALL_DEV+CI}" != "CI" ]]; then
 fi
 
 # only perform if we're not running in Heroku CI
-if [[ -z "${HEROKU_PHP_INSTALL_DEV}" ]]; then
+if [[ -z "$HEROKU_PHP_INSTALL_DEV" ]]; then
     source $bp_dir/bin/util/opcache.sh
     source $bp_dir/bin/util/xdebug.sh
 fi
