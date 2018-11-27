@@ -8,6 +8,7 @@ phpize
 make
 cp modules/xdebug.so /app/.heroku/php/lib/php/extensions/no-debug-non-zts-20160303
 #echo "zend_extension=/app/.heroku/php/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so" >> /app/.heroku/php/etc/php/php.ini
+mkdir -p ${OUT_PREFIX}/etc/php/conf.d
 cat > ${OUT_PREFIX}/etc/php/conf.d/xdebug.ini-dist <<'EOF'
 zend_extension=xdebug.so
 ;xdebug.remote_autosta rt=0
