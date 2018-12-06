@@ -10,11 +10,8 @@ cp modules/xdebug.so /app/.heroku/php/lib/php/extensions/no-debug-non-zts-201603
 mkdir -p ${OUT_PREFIX}/etc/php/conf.d
 cat > $build_dir/.heroku/php/etc/php/conf.d/xdebug.ini <<'EOF'
 zend_extension=xdebug.so
-;xdebug.remote_autosta rt=0
 xdebug.remote_enable=1
-;xdebug.default_enable=0
-;xdebug.remote_host=docker.for.mac.host.internal
-xdebug.remote_host=172.22.0.8
+xdebug.remote_host=docker.for.mac.host.internal
 xdebug.remote_port=9001
 xdebug.remote_connect_back=1
 EOF
