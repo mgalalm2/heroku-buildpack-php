@@ -6,7 +6,7 @@ cd xdebug-2.6.1
 phpize
 ./configure
 make -s -j 9
-ls -d -1 /app/.heroku/php/lib/php/extensions/* | xargs cp ~/xdebug-2.6.1/modules/xdebug.so
+ls -d -1 /app/.heroku/php/lib/php/extensions/* | xargs cp modules/xdebug.so
 rm -rf  ~/xdebug-2.6.1
 mkdir -p ${OUT_PREFIX}/etc/php/conf.d
 cat > $build_dir/.heroku/php/etc/php/conf.d/xdebug.ini <<'EOF'
