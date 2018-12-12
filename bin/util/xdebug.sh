@@ -6,7 +6,8 @@ cd xdebug-2.6.1
 phpize
 ./configure
 make -s -j 9
-cp modules/xdebug.so /app/.heroku/php/lib/php/extensions/no-debug-non-zts-20160303
+ls -d -1 /app/.heroku/php/lib/php/extensions/* | xargs cp ~/xdebug-2.6.1/modules/xdebug.so
+rm -rf  ~/xdebug-2.6.1
 mkdir -p ${OUT_PREFIX}/etc/php/conf.d
 cat > $build_dir/.heroku/php/etc/php/conf.d/xdebug.ini <<'EOF'
 zend_extension=xdebug.so
